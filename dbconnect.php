@@ -1,7 +1,7 @@
 <?php
 
 //DBに接続
-$host = "localhost"; //MySQLがインストールされてるコンピュータ
+$host = "localhost" ; //MySQLがインストールされてるコンピュータ
 $dbname = "homework"; //使用するDB
 $charset = "utf8mb4"; //文字コード
 $user = 'root'; //MySQLにログインするユーザー名

@@ -1,4 +1,11 @@
 <?php
+ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    header('Location: index.php');
+}
+
+require_once('funciton.php');
+
+
 
   $date = $_POST['date'];
   $title = $_POST['title'];
@@ -34,12 +41,14 @@ if ($contents == '') {
     <link rel="stylesheet" href="assets/css/blog.css">
 
   </head>
+  <div class="header"> Diary</div>
+
   <body>  
   <h1>本文内容確認</h1>
-    <p><?php echo $date_result; ?></p>
-    <p><?php echo $title_result; ?></p>
-    <p><?php echo $contents_result; ?></p>  
-    <form method="POST" action="thanks.php">
+    <p><?php echo h($date_result); ?></p>
+    <p><?php echo h($title_result); ?></p>
+    <p><?php echo h($contents_result); ?></p>
+  <form method="POST" action="thanks.php">
         <input type="hidden" name="date" value="<?php echo $date; ?>">
         <input type="hidden" name="title" value="<?php echo $title; ?>">
         <input type="hidden" name="contents" value="<?php echo $contents; ?>">
@@ -49,4 +58,7 @@ if ($contents == '') {
         <?php endif; ?>
     </form>
 </body>
+
+<br><br><br><br><br><br><br><br>
+<div class="footer"></div>
 </html>
